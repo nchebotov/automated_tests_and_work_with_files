@@ -78,5 +78,5 @@ if __name__ == '__main__':
     time.sleep(4)
     download_file_pdf()
     time.sleep(5)
-    browser.close()
+    browser.quit()
     archive()
