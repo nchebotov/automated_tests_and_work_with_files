@@ -68,6 +68,7 @@ def archive():
         for file in file_dir:
             add_file = os.path.join(os.path.join(current_dir, 'downloads'), file)
             zip_archive.write(add_file, basename(add_file))
+    zip_archive.close()
 
 
 if __name__ == '__main__':
