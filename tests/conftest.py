@@ -17,7 +17,3 @@ def open_archive(path_):
     with ZipFile(os.path.join(path_[2], 'example.zip'), 'r') as file_zip:
         yield file_zip
         file_zip.close()
-
-
-# @pytest.fixture(scope='function', autouse=True)
-
