@@ -49,7 +49,7 @@ def test_read_and_content_to_pdf(path_):
         reader = PdfReader(file_pdf)
         try:
             page = reader.pages[0]
-            assert "1Morbi viverra semper lorem nec molestie" in page.extract_text(), \
+            assert "Morbi viverra semper lorem nec molestie" in page.extract_text(), \
                 f"Фраза {'Morbi viverra semper lorem nec molestie'} отсутствует в файле {'file-example_PDF_1MB.pdf'}"
         finally:
             os.remove(os.path.join(os.path.dirname(os.path.abspath(__file__)),
