@@ -52,6 +52,6 @@ def test_read_and_content_to_pdf(path_):
             assert "Morbi viverra semper lorem nec molestie" in page.extract_text(), \
                 f"Фраза {'Morbi viverra semper lorem nec molestie'} отсутствует в файле {'file-example_PDF_1MB.pdf'}"
         finally:
-            os.remove(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+            os.remove(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                    'file-example_PDF_1MB.pdf'))
             file_zip.close()
