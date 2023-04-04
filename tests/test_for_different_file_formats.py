@@ -25,11 +25,9 @@ def test_read_and_content_to_csv(path_):
         text = csv.reader(TextIOWrapper(file))
         list_csv = []
         for row in text:
-            str_ = ','.join(row).replace(',', ',', 5)
+            str_ = ','.join(row).replace(',', ',', 11)
             list_csv.append(str_)
-    assert "5,Holmes HEPA Air Purifier,Carlos Soltero,515,30.94,21.78,5.94,Nunavut,Appliances,0.5" in list_csv, \
-        f"Строки {'5,Holmes HEPA Air Purifier,Carlos Soltero,515,30.94,21.78,5.94,Nunavut,Appliances,0.5'} нет" \
-        f"в файле {'SampleCSVFile_11kb.csv'}"
+    assert "11,Xerox 1980,Neola Schneider,807,-166.85,4.28,6.18,Nunavut,Paper,0.4" in list_csv
     file.close()
 
 
@@ -53,6 +51,6 @@ def test_read_and_content_to_pdf(path_):
             assert "Morbi viverra semper lorem nec molestie" in page.extract_text(), \
                 f"Фраза {'Morbi viverra semper lorem nec molestie'} отсутствует в файле {'file-example_PDF_1MB.pdf'}"
         finally:
-            os.remove(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                   'file-example_PDF_1MB.pdf'))
+            # os.remove(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+            #                        'file-example_PDF_1MB.pdf'))
             file_zip.close()
