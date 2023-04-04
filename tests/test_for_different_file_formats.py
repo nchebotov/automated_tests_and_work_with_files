@@ -4,7 +4,6 @@ import csv
 import os
 from io import TextIOWrapper
 from zipfile import ZipFile
-
 from PyPDF2 import PdfReader
 from openpyxl import load_workbook
 
