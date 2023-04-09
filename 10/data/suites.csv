@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sun Apr 09 18:16:23 GMT 2023","Sun Apr 09 18:16:23 GMT 2023","66","tests","test_for_different_file_formats","","","","Text occurrence test in {pdf} file",""
+"passed","Sun Apr 09 18:16:23 GMT 2023","Sun Apr 09 18:16:23 GMT 2023","9","tests","test_for_different_file_formats","","","","Text occurrence test in {xlsx} file",""
+"broken","Sun Apr 09 18:16:23 GMT 2023","Sun Apr 09 18:16:23 GMT 2023","1","tests","test_for_different_file_formats","","","","String occurrence test in {csv} file",""
+"passed","Sun Apr 09 18:16:23 GMT 2023","Sun Apr 09 18:16:23 GMT 2023","0","tests","test_for_different_file_formats","","","","Archive size test and number of files in it",""
