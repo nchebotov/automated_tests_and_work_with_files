@@ -19,21 +19,16 @@ def test_count_files_in_archive_and_size(open_archive):
 
 @allure.title('String occurrence test in {csv} file')
 def test_read_and_content_to_csv():
-    with allure.step('Precondition'):
-        path_for_resourses = file_management_utility.path_()[1]
-        zip_file = ZipFile(os.path.join(path_for_resourses, "example.zip"))
-    with allure.step('Open {csv} file'):
-        with zip_file.open('SampleCSVFile_11kb.csv') as file:
-            text = csv.reader(TextIOWrapper(file))
-            with allure.step('Line-by-line writing {csv} file to list'):
-                list_csv = []
-                for row in text:
-                    str_ = ','.join(row).replace(',', ',', 11)
-                    list_csv.append(str_)
-    with allure.step('Asserting for occerrence text in {csv} file'):
-        assert "11,Xerox 1980,Neola Schneider,807,-166.85,4.28,6.18,Nunavut,Paper,0.4" in list_csv
-    with allure.step('Postcondition'):
-        file.close()
+    path_for_resourses = file_management_utility.path_()[1]
+    zip_file = ZipFile(os.path.join(path_for_resourses, "example.zip"))
+    with zip_file.open('SampleCSVFile_11kb.csv') as file:
+        text = csv.reader(TextIOWrapper(file))
+        list_csv = []
+        for row in text:
+            str_ = ','.join(row).replace(',', ',', 11)
+            list_csv.append(str_)
+    assert "11,Xerox 1980,Neola Schneider,807,-166.85,4.28,6.18,Nunavut,Paper,0.4" in list_csv
+    file.close()
 
 
 @allure.title('Text occurrence test in {xlsx} file')
@@ -60,6 +55,4 @@ def test_read_and_content_to_pdf():
             assert "Morbi viverra semper lorem nec molestie" in page.extract_text(), \
                 f"Фраза {'Morbi viverra semper lorem nec molestie'} отсутствует в файле {'file-example_PDF_1MB.pdf'}"
         finally:
-            # base_path = file_management_utility.path_()[2]
-            # os.remove(os.path.join(base_path, 'file-example_PDF_1MB.pdf'))
             file_zip.close()
