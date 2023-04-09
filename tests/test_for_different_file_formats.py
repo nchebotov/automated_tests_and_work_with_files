@@ -22,7 +22,7 @@ def test_read_and_content_to_csv():
     path_for_resourses = file_management_utility.path_()[1]
     zip_file = ZipFile(os.path.join(path_for_resourses, "example.zip"))
     with zip_file.open('SampleCSVFile_11kb.csv') as file:
-        text = csv.reader(TextIOWrapper(file))
+        text = csv.reader(TextIOWrapper(file, encoding='utf-8', errors='ignore'))
         list_csv = []
         for row in text:
             str_ = ','.join(row).replace(',', ',', 11)
